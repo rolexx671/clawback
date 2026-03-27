@@ -1,0 +1,167 @@
+{
+  "agents": [
+    {
+      "id": "parser",
+      "name": "Парсер",
+      "emoji": "🕷",
+      "description": "Парсит данные с веб-страниц: цены, товары, таблицы, контакты, любые структурированные данные",
+      "triggers": ["спарси", "парс", "вытащи с сайта", "данные с сайта", "цены с", "scrape", "parse"],
+      "inputTypes": ["url", "text"],
+      "outputTypes": ["json", "table", "text"],
+      "tools": ["WebFetch", "Bash(curl*)", "Bash(node*)", "Read", "Write"],
+      "priority": 1,
+      "status": "active"
+    },
+    {
+      "id": "analyst",
+      "name": "Аналитик",
+      "emoji": "📊",
+      "description": "Анализирует данные: сравнения, графики, статистика, выводы из CSV/Excel/JSON",
+      "triggers": ["анализ", "сравни", "график", "статистик", "аналитик", "analyze", "compare", "chart"],
+      "inputTypes": ["file", "json", "text"],
+      "outputTypes": ["text", "chart", "table"],
+      "tools": ["Read", "Write", "Bash(node*)", "Bash(python3*)"],
+      "priority": 2,
+      "status": "active"
+    },
+    {
+      "id": "extractor",
+      "name": "Экстрактор",
+      "emoji": "📁",
+      "description": "Извлекает информацию из файлов: PDF, DOCX, Excel, изображений (OCR)",
+      "triggers": ["из файла", "из pdf", "из документа", "из excel", "что в файле", "extract", "ocr", "распознай"],
+      "inputTypes": ["file"],
+      "outputTypes": ["text", "json", "table"],
+      "tools": ["Read", "Write", "Bash(node*)", "Bash(python3*)", "Bash(tesseract*)"],
+      "priority": 1,
+      "status": "active"
+    },
+    {
+      "id": "researcher",
+      "name": "Ресёрчер",
+      "emoji": "🔍",
+      "description": "Глубокий поиск по теме: собирает инфу из 10+ источников, делает выжимку с ссылками",
+      "triggers": ["ресёрч", "ресерч", "исследуй", "найди всё про", "изучи тему", "research", "найди информацию"],
+      "inputTypes": ["text"],
+      "outputTypes": ["text", "json"],
+      "tools": ["WebSearch", "WebFetch", "Read", "Write"],
+      "priority": 1,
+      "status": "active"
+    },
+    {
+      "id": "copywriter",
+      "name": "Копирайтер",
+      "emoji": "📝",
+      "description": "Пишет тексты: посты для соцсетей, рерайт, переводы, описания, письма",
+      "triggers": ["напиши текст", "пост", "рерайт", "перепиши", "копирайт", "контент", "copywrite"],
+      "inputTypes": ["text"],
+      "outputTypes": ["text"],
+      "tools": ["WebSearch", "Read", "Write"],
+      "priority": 2,
+      "status": "active"
+    },
+    {
+      "id": "finance",
+      "name": "Финансовый",
+      "emoji": "💰",
+      "description": "Курсы валют, крипта, трекинг расходов, финансовый анализ, конвертация",
+      "triggers": ["курс", "валют", "крипт", "биткоин", "доллар", "евро", "тенге", "расход", "бюджет", "конверт"],
+      "inputTypes": ["text"],
+      "outputTypes": ["text", "json"],
+      "tools": ["WebSearch", "WebFetch", "Bash(curl*)", "Read", "Write"],
+      "priority": 2,
+      "status": "active"
+    },
+    {
+      "id": "shopper",
+      "name": "Шоппер",
+      "emoji": "🛒",
+      "description": "Находит товары на маркетплейсах, сравнивает цены Ozon/WB/Kaspi, отслеживает скидки",
+      "triggers": ["найди товар", "цена на", "где купить", "сравни цены", "маркетплейс", "ozon", "wildberries", "kaspi"],
+      "inputTypes": ["text", "url"],
+      "outputTypes": ["text", "table", "json"],
+      "tools": ["WebSearch", "WebFetch", "Bash(node*)", "Read", "Write"],
+      "priority": 3,
+      "status": "planned"
+    },
+    {
+      "id": "planner",
+      "name": "Планировщик",
+      "emoji": "📅",
+      "description": "Умный планер: маршруты поездок, тайминги, чеклисты, учёт часовых поясов",
+      "triggers": ["спланируй", "план", "маршрут", "чеклист", "расписание", "тайминг", "schedule"],
+      "inputTypes": ["text"],
+      "outputTypes": ["text", "json"],
+      "tools": ["WebSearch", "WebFetch", "Read", "Write"],
+      "priority": 3,
+      "status": "planned"
+    },
+    {
+      "id": "security",
+      "name": "Безопасник",
+      "emoji": "🔐",
+      "description": "Мониторинг сервера: нагрузка, диск, подозрительные логины, утечки паролей, алерты",
+      "triggers": ["безопасность", "мониторинг", "сервер", "нагрузка", "логин", "утечка", "security", "monitor"],
+      "inputTypes": ["text"],
+      "outputTypes": ["text", "json"],
+      "tools": ["Bash(*)", "Read", "Write"],
+      "priority": 3,
+      "status": "planned"
+    },
+    {
+      "id": "tutor",
+      "name": "Тьютор",
+      "emoji": "🎓",
+      "description": "Объясняет сложные темы, готовит к тестам, квизы, карточки, повторение материала",
+      "triggers": ["объясни", "научи", "тест", "квиз", "карточки", "подготовь", "учёба", "tutor", "синергия"],
+      "inputTypes": ["text", "file"],
+      "outputTypes": ["text"],
+      "tools": ["WebSearch", "WebFetch", "Read", "Write"],
+      "priority": 3,
+      "status": "planned"
+    },
+    {
+      "id": "translator",
+      "name": "Переводчик",
+      "emoji": "🌐",
+      "description": "Перевод и адаптация текстов, документов, скриншотов с учётом контекста и сленга",
+      "triggers": ["переведи", "перевод", "translate", "на английский", "на русский", "на казахский"],
+      "inputTypes": ["text", "file"],
+      "outputTypes": ["text"],
+      "tools": ["Read", "Write"],
+      "priority": 3,
+      "status": "planned"
+    },
+    {
+      "id": "networker",
+      "name": "Нетворкер",
+      "emoji": "🤝",
+      "description": "Составляет письма, ответы, follow-up, адаптирует тон: деловой/дружеский/формальный",
+      "triggers": ["напиши письмо", "ответ", "follow-up", "отказ", "деловое", "формально"],
+      "inputTypes": ["text"],
+      "outputTypes": ["text"],
+      "tools": ["Read", "Write"],
+      "priority": 3,
+      "status": "planned"
+    },
+    {
+      "id": "visual",
+      "name": "Визуальщик",
+      "emoji": "📸",
+      "description": "Генерация картинок, ресайз, обрезка, водяные знаки, мемы, обложки, баннеры",
+      "triggers": ["картинк", "изображен", "мем", "обложк", "баннер", "сгенерируй", "нарисуй", "image"],
+      "inputTypes": ["text", "file"],
+      "outputTypes": ["file"],
+      "tools": ["Bash(node*)", "Bash(python3*)", "Read", "Write"],
+      "priority": 3,
+      "status": "planned"
+    }
+  ],
+  "routing": {
+    "defaultAgent": null,
+    "fallbackToLLM": true,
+    "confidenceThreshold": 0.6,
+    "maxConcurrentAgents": 3,
+    "timeoutMs": 120000
+  }
+}
